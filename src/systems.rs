@@ -497,3 +497,16 @@ pub fn targeted_movement(ecs: &mut SubWorld, commands: &mut CommandBuffer, #[res
         }
     });
 }
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn in_range_test() {
+        let p1 = Point::new(0, 0);
+        let p2 = Point::new(1, 1);
+        let range = 1;
+        assert!(in_range(p1, p2, range));
+    }
+}

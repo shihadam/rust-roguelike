@@ -148,3 +148,37 @@ impl Map {
         self.tiles = new_map;
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn map_test() {
+        let mut rng = RandomNumberGenerator::new();
+        let my_map = Map::new(&mut rng);
+
+        // dimensions test
+        assert_eq!(my_map.dimensions(), Point::new(MAP_WIDTH, MAP_HEIGHT));
+
+        // can_enter test
+        let idx = rng.random_slice_index(&my_map.tiles).unwrap();
+        let pnt = my_map.index_to_point2d(idx);
+
+        if my_map.tiles[idx] == TileType::Floor {
+            assert!(my_map.can_enter(pnt));
+        } else {
+            assert!(!my_map.can_enter(pnt));
+        }
+
+        // can_mine test
+        let idx = rng.random_slice_index(&my_map.tiles).unwrap();
+        let pnt = my_map.index_to_point2d(idx);
+
+        if my_map.tiles[idx] != TileType::Floor {
+            assert!(my_map.can_mine(pnt));
+        } else {
+            assert!(!my_map.can_mine(pnt));
+        }
+    }
+}
