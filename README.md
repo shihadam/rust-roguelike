@@ -1,4 +1,5 @@
 # Dwarf Roguelike
+Created by Adam Shih
 
 Dwarf Roguelike is a roguelike game written in rust, using the bracket-lib game engine,
 and legion entity component system. It is a simple game, mine resources to
