@@ -16,4 +16,4 @@ https://bfnightly.bracketproductions.com/rustbook/
 https://pragprog.com/titles/hwrust/hands-on-rust/
 
 ## License
-[MIT](LICENSE.md)
+[MIT](https://github.com/shihadam/rust-roguelike/blob/main/LICENSE)
