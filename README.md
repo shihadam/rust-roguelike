@@ -9,7 +9,6 @@ increase your stats, kill enemies, and find the "Giant Gem" to win.
 ```
 cargo run
 ```
-From the project directory, run this command. It will build and run the binary for you.
 
 ## Game mechanics
 ### Monsters
